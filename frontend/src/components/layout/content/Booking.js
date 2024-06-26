@@ -5,6 +5,7 @@ import { simpleUrl } from '../small_components/Url';
 import { mySwal } from '../small_components/Alert';
 import Style from '../../../styles/Booking.module.css';
 
+
 const Bookings = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -55,6 +56,8 @@ const Bookings = () => {
         });
 
     };
+
+
 
     return (
         <div className={Style.container}>

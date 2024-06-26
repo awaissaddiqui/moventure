@@ -11,8 +11,10 @@
     max-width: 500px;
     text-align: center;
     color: #333;
-    position: relative;
-    top: -25rem; /* Adjust this value as needed */
+    position: absolute;
+    top: 25%;
+    left: 30%;
+     /* Adjust this value as needed */
 }
 
 .card img {
@@ -49,5 +51,108 @@
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+.button3{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button4{
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button5 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button5:hover {
+    background-color: #45a049;
+}
+
+/* Feedback */
+
+/* Styles for the feedback section */
+.feedback {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feedback textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stars span {
+    font-size: 2em;
+    cursor: pointer;
+    color: grey; /* Default star color */
+    transition: color 0.2s;
+}
+
+.stars span:hover,
+.stars span:hover ~ span {
+    color: yellow; /* Star color on hover */
+}
+
+.filledStar {
+    color: yellow; /* Star color when selected */
+}
+
+.emptyStar {
+    color: grey; /* Default star color */
+}
+
+/* Styles for the reviews section */
+.reviews {
+    margin-top: 20px;
+}
+
+.reviews h2 {
+    margin-bottom: 10px;
+}
+
+.reviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.reviewCard {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 

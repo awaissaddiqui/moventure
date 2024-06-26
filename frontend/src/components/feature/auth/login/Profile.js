@@ -53,7 +53,14 @@ function Profile() {
         const token = localStorage.getItem('x-auth-token');
         const userId = localStorage.getItem('userId');
 
-        axios.put(`${simpleUrl}/user/${userId}`, formData, {
+        axios.put(`${simpleUrl}/user/${userId}`, {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
+            address: formData.address,
+            dateOfBirth: formData.dateOfBirth
+        }, {
             headers: {
                 'Content-Type': 'application/json',
                 'x-auth-token': token
@@ -83,21 +90,26 @@ function Profile() {
     const handleDelete = () => {
         const userId = localStorage.getItem('userId');
         mySwal.fire({
-            title: 'Are you sure?',
-            text: 'You are about to delete your account',
-            icon: 'warning',
+            title: "Delete Account!",
+            icon:"warning",
+            text: "Are you sure to delete your account",
+            input: "text",
             showCancelButton: true,
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
-            reverseButtons: true
-        }).then((result) => {
+            animation: "slide-from-top",
+            inputPlaceholder: "Enter your password"
+          }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`${simpleUrl}/user/${userId}`,{
-                    email: user.email,
-                }, {
+                const token = localStorage.getItem('x-auth-token');
+                
+                
+                axios.delete(`${simpleUrl}/user/${userId}`, {
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-auth-token': localStorage.getItem('x-auth-token')
+                        'x-auth-token': token
+                    },
+                    data: {  // Add the data as part of the request body
+                        email: user.email,
+                        password: result.value
                     }
                 }).then((response) => {
                     mySwal.fire({
