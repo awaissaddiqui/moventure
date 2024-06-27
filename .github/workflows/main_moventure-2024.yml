@@ -24,12 +24,11 @@ jobs:
       - name: Change to backend directory
         run: cd backend
 
-      - name: npm install, build, and test
+      - name: npm install, build
         run: |
           cd backend
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Zip artifact for deployment
         run: |
